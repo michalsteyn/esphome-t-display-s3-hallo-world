@@ -1,0 +1,452 @@
+ micha@MichalDesktop  C:\Automation\ESP\LillyGoTouch\Demo  master  esphome run .\demo.yaml
+INFO ESPHome 2024.4.0
+INFO Reading configuration .\demo.yaml...
+INFO Generating C++ source...
+INFO Compiling app...
+Processing t-amoled (board: esp32-s3-devkitc-1; framework: espidf; platform: platformio/espressif32@5.4.0)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32-s3-devkitc-1.html
+PLATFORM: Espressif 32 (5.4.0) > Espressif ESP32-S3-DevKitC-1-N8 (8 MB QD, No PSRAM)
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+DEBUG: Current (esp-builtin) On-board (esp-builtin) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-espidf @ 3.40406.240122 (4.4.6)
+ - tool-cmake @ 3.16.4
+ - tool-esptoolpy @ 1.40400.0 (4.4.0)
+ - tool-idf @ 1.0.1
+ - tool-mconf @ 1.4060000.20190628 (406.0.0)
+ - tool-ninja @ 1.9.0
+ - toolchain-esp32ulp @ 2.35.0-20220830
+ - toolchain-riscv32-esp @ 8.4.0+2021r2-patch5
+ - toolchain-xtensa-esp32s3 @ 8.4.0+2021r2-patch5
+Reading CMake configuration...
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ off, Compatibility ~ soft
+Found 1 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- ArduinoJson @ 6.18.5
+Building in release mode
+Compiling .pioenvs\t-amoled\src\main.o
+Linking .pioenvs\t-amoled\firmware.elf
+Retrieving maximum program size .pioenvs\t-amoled\firmware.elf
+Checking size .pioenvs\t-amoled\firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [=         ]  10.3% (used 33692 bytes from 327680 bytes)
+Flash: [====      ]  43.0% (used 788381 bytes from 1835008 bytes)
+Building .pioenvs\t-amoled\firmware.bin
+esptool.py v4.4
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+esp32_create_combined_bin([".pioenvs\t-amoled\firmware.bin"], [".pioenvs\t-amoled\firmware.elf"])
+esptool.py v4.7.0
+Wrote 0xd0910 bytes to file C:\Automation\ESP\LillyGoTouch\Demo\.esphome\build\t-amoled\.pioenvs\t-amoled/firmware-factory.bin, ready to flash to offset 0x0
+================================================================================ [SUCCESS] Took 12.53 seconds ================================================================================
+INFO Successfully compiled program.
+Found multiple options for uploading, please choose one:
+  [1] COM7 (USB Serial Device (COM7))
+  [2] Over The Air (t-amoled.local)
+(number): 1
+esptool.py v4.7.0
+Serial port COM7
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: dc:da:0c:5a:62:60
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 16MB
+Flash will be erased from 0x00010000 to 0x000d0fff...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x00009000 to 0x0000afff...
+Compressed 788752 bytes to 516120...
+Wrote 788752 bytes (516120 compressed) at 0x00010000 in 7.1 seconds (effective 890.9 kbit/s)...
+Hash of data verified.
+Warning: Image file at 0x0 is protected with a hash checksum, so not changing the flash size setting. Use the --flash_size=keep option instead of --flash_size=16MB in order to remove this warning, or use the --dont-append-digest option for the elf2image command in order to generate an image file without a hash checksum
+Compressed 20912 bytes to 13096...
+Wrote 20912 bytes (13096 compressed) at 0x00000000 in 0.4 seconds (effective 389.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 134...
+Wrote 3072 bytes (134 compressed) at 0x00008000 in 0.1 seconds (effective 379.5 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Wrote 8192 bytes (31 compressed) at 0x00009000 in 0.1 seconds (effective 520.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+INFO Successfully uploaded program.
+INFO Starting log output from COM7 with baud rate 115200
+[15:11:45]I (139) esp_image: segment 1: paddr=0002f3a8 vaddr=3fc97a00 size=00c70h (  3184) load
+[15:11:45]I (140) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=89bach (564140) map
+[15:11:45]I (246) esp_image: segment 3: paddr=000b9bd4 vaddr=3fc98670 size=0330ch ( 13068) load
+[15:11:45]I (249) esp_image: segment 4: paddr=000bcee8 vaddr=40374000 size=139f8h ( 80376) load
+[15:11:45]I (277) boot: Loaded app from partition at offset 0x10000
+[15:11:45]I (325) boot: Set actual ota_seq=1 in otadata[0]
+[15:11:45]I (325) boot: Disabling RNG early entropy source...
+[15:11:45]I (325) cpu_start: Multicore app
+[15:11:45]I (328) opi psram: vendor id : 0x0d (AP)
+[15:11:45]I (333) opi psram: dev id    : 0x02 (generation 3)
+[15:11:45]I (338) opi psram: density   : 0x03 (64 Mbit)
+[15:11:45]I (343) opi psram: good-die  : 0x01 (Pass)
+[15:11:45]I (348) opi psram: Latency   : 0x01 (Fixed)
+[15:11:45]I (353) opi psram: VCC       : 0x01 (3V)
+[15:11:45]I (357) opi psram: SRF       : 0x01 (Fast Refresh)
+[15:11:45]I (363) opi psram: BurstType : 0x01 (Hybrid Wrap)
+[15:11:45]I (368) opi psram: BurstLen  : 0x01 (32 Byte)
+[15:11:45]I (373) opi psram: Readlatency  : 0x02 (10 cycles@Fixed)
+[15:11:45]I (379) opi psram: DriveStrength: 0x00 (1/1)
+[15:11:45]I (384) spiram: Found 64MBit SPI RAM device
+[15:11:45]I (389) spiram: SPI RAM mode: sram 40m
+[15:11:45]I (394) spiram: PSRAM initialized, cache is in normal (1-core) mode.
+[15:11:45]I (401) cpu_start: Pro cpu up.
+[15:11:45]I (404) cpu_start: Starting app cpu, entry point is 0x40376984
+[15:11:45]I (0) cpu_start: App cpu up.
+[15:11:46]I (1142) spiram: SPI SRAM memory test OK
+[15:11:46]I (1151) cpu_start: Pro cpu start user code
+[15:11:46]I (1151) cpu_start: cpu freq: 160000000
+[15:11:46]I (1151) cpu_start: Application information:
+[15:11:46]I (1151) cpu_start: Project name:     t-amoled
+[15:11:46]I (1151) cpu_start: App version:      2024.4.0
+[15:11:46]I (1151) cpu_start: Compile time:     May 19 2024 15:06:21
+[15:11:46]I (1152) cpu_start: ELF file SHA256:  231b544b4ab87d1a...
+[15:11:46]I (1152) cpu_start: ESP-IDF:          4.4.6
+[15:11:46]I (1152) cpu_start: Min chip rev:     v0.0
+[15:11:46]I (1152) cpu_start: Max chip rev:     v0.99
+[15:11:46]I (1153) cpu_start: Chip rev:         v0.2
+[15:11:46]I (1153) heap_init: Initializing. RAM available for dynamic allocation:
+[15:11:46]I (1153) heap_init: At 3FC9FDA0 len 00049970 (294 KiB): D/IRAM
+[15:11:46]I (1154) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DIRAM
+[15:11:46]I (1154) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+[15:11:46]I (1154) heap_init: At 600FE000 len 00002000 (8 KiB): RTCRAM
+[15:11:46]I (1155) spiram: Adding pool of 8192K of external SPI memory to heap allocator
+[15:11:46]I (1156) spi_flash: detected chip: winbond
+[15:11:46]I (1156) spi_flash: flash io: dio
+[15:11:46]W (1156) spi_flash: Detected size(16384k) larger than the size in the binary image header(4096k). Using the size in the binary image header.
+[15:11:46]I (1157) sleep: Configure to isolate all GPIO pins in sleep state
+[15:11:46]I (1158) sleep: Enable automatic switching of GPIO sleep configuration
+[15:11:46]I (1159) cpu_start: Starting scheduler on PRO CPU.
+[15:11:46]I (0) cpu_start: Starting scheduler on APP CPU.
+[15:11:46][I][logger:158]: Log initialized
+[15:11:46][VV][esp32.preferences:071]: nvs_get_blob: key: 233825507, len: 4
+[15:11:46][C][ota:483]: There have been 3 suspected unsuccessful boot attempts.
+[15:11:46][VV][esp32.preferences:040]: s_pending_save: key: 233825507, len: 4
+[15:11:46][D][esp32.preferences:114]: Saving 1 preferences to flash...
+[15:11:46][VV][esp32.preferences:123]: Checking if NVS data 233825507 has changed
+[15:11:46][V][esp32.preferences:126]: sync: key: 233825507, len: 4
+[15:11:46][D][esp32.preferences:143]: Saving 1 preferences to flash: 0 cached, 1 written, 0 failed
+[15:11:46][I][app:029]: Running through setup()...
+[15:11:46][V][app:030]: Sorting components by setup priority...
+[15:11:46][D][spi:039]: Setting up SPI bus...
+[15:11:46][VV][scheduler:063]: set_interval(name='', interval=60000, offset=29341)
+[15:11:46][C][display.qspi_amoled:009]: Setting up QSPI_AMOLED
+[15:11:46][D][spi_device:379]: mode 0, data_rate 10000kHz
+[15:11:46][VV][esp-idf:000]: I (190) gpio: GPIO[6]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0
+[15:11:46]
+[15:11:46][VV][esp-idf:000]: I (192) gpio: GPIO[38]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0
+[15:11:46]
+[15:11:46][VV][esp-idf:000]: I (194) gpio: GPIO[17]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0
+[15:11:46]
+[15:11:46][VV][scheduler:032]: set_timeout(name='', timeout=120)
+[15:11:46][VV][scheduler:032]: set_timeout(name='', timeout=240)
+[15:11:46][VV][scheduler:063]: set_interval(name='update', interval=1000, offset=478)
+[15:11:46][VV][scheduler:226]: Running interval '' with interval=60000 last_execution=4294879301 (now=1368)
+[15:11:46][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=4294967185 (now=1368)
+[15:11:46][W][component:237]: Component display took a long time for an operation (586 ms).
+[15:11:46][W][component:238]: Components should block for at most 30 ms.
+[15:11:46][VV][scheduler:226]: Running timeout '' with interval=120 last_execution=1365 (now=1960)
+[15:11:46][VV][scheduler:226]: Running timeout '' with interval=240 last_execution=1366 (now=1960)
+[15:11:46][C][display.qspi_amoled:110]: QSPI_AMOLED setup complete
+[15:11:46][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=889 (now=1960)
+[15:11:47][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:11:47][W][component:238]: Components should block for at most 30 ms.
+[15:11:47][C][wifi:038]: Setting up WiFi...
+[15:11:47][VV][esp-idf:000]: I (1103) pp: pp rom version: e7ae62f
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (1105) net80211: net80211 rom version: e7ae62f
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (1107) wifi:
+[15:11:47][VV][esp-idf:000]: wifi driver task: 3fcf7e40, prio:23, stack:6656, core=0
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3379) system_api: Base MAC address is not set
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3379) system_api: read default base MAC address from EFUSE
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3383) wifi:
+[15:11:47][VV][esp-idf:000]: wifi firmware version: 1ba8b6a
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3384) wifi:
+[15:11:47][VV][esp-idf:000]: wifi certification version: v7.0
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3386) wifi:
+[15:11:47][VV][esp-idf:000]: config NVS flash: enabled
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3387) wifi:
+[15:11:47][VV][esp-idf:000]: config nano formating: disabled
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3389) wifi:
+[15:11:47][VV][esp-idf:000]: Init data frame dynamic rx buffer num: 32
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3390) wifi:
+[15:11:47][VV][esp-idf:000]: Init management frame dynamic rx buffer num: 32[VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3392) wifi:
+[15:11:47][VV][esp-idf:000]: Init management short buffer num: 32
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3393) wifi:
+[15:11:47][VV][esp-idf:000]: Init dynamic tx buffer num: 32
+[15:11:47][VV][esp-idf:000]:
+[15:11:47][VV][esp-idf:000]: I (3395) wifi:
+[15:11:47][VV][esp-idf:000]: Init tx cache buffer num: 32
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3397) wifi[VV][esp-idf:000]: Init static tx FG buffer num: 2
+[15:11:47][VV][esp-idf:000
+[15:11:47][VV][esp-idf:000]: I (3398) wifi:
+[15:11:47][VV][esp-idf:000]: Init static rx buffer size: 1600
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3400) wifi:
+[15:11:47][VV][esp-idf:000]: Init static rx buffer num: 10
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3401) wifi:
+[15:11:47][VV][esp-idf:000]: Init dynamic rx buffer num: 32
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3403) wifi_init: rx ba win: 6
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3404) wifi_init: tcpip mbox: 32
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3405) wifi_init: udp mbox: 6
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3406) wifi_init: tcp mbox: 6
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3407) wifi_init: tcp tx win: 5744
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3408) wifi_init: tcp rx win: 5744
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3409) wifi_init: tcp mss: 1440
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3410) wifi_init: WiFi IRAM OP enabled
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3411) wifi_init: WiFi RX IRAM OP enabled
+[15:11:47]
+[15:11:47][C][wifi:051]: Starting WiFi...
+[15:11:47][C][wifi:052]:   Local MAC: DC:DA:0C:5A:62:60
+[15:11:47][V][esp32.preferences:059]: nvs_get_blob('2833751208'): ESP_ERR_NVS_NOT_FOUND - the key might not be set yet
+[15:11:47][V][wifi_esp32:217]: Enabling STA.
+[15:11:47][VV][esp-idf:000]: I (3416) phy_init: phy_version 610,2bff4c8,Jul 27 2023,20:22:1
+[15:11:47][VV][esp-idf:000]: I (3454) wifi:
+[15:11:47][VV][esp-idf:000]: mode : sta (dc:da:0c:5a:62:60)[VV][esp-idf:000]:
+[15:11:47][VV][esp-idf:000]: I (3456) wifi:
+[15:11:47][VV][esp-idf:000]: enable tsf
+[15:11:47][VV][esp-idf:000]:
+[15:11:47]
+[15:11:47][VV][esp-idf:000]: I (3458) wifi:
+[15:11:47][VV][esp-idf:000]: Set ps type: 1
+[15:11:47]
+[15:11:47][VV][esp-idf:000
+[15:11:47][D][wifi:462]: Starting scan...
+[15:11:47][V][wifi_esp32:616]: Event: WiFi STA start
+[15:11:47][VV][esp-idf:000]: I (3463) wifi:
+[15:11:47][VV][esp-idf:000]: Set ps type: 1
+[15:11:47]
+[15:11:47][VV][esp-idf:000]:
+[15:11:47][W][component:157]: Component wifi set Warning flag: unspecified
+[15:11:47][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=1889 (now=2889)
+[15:11:48][W][component:237]: Component display took a long time for an operation (295 ms).
+[15:11:48][W][component:238]: Components should block for at most 30 ms.
+[15:11:48][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=2889 (now=3889)
+[15:11:49][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:11:49][W][component:238]: Components should block for at most 30 ms.
+[15:11:49][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=3889 (now=4889)
+[15:11:50][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:11:50][W][component:238]: Components should block for at most 30 ms.
+[15:11:50][V][wifi_esp32:689]: Event: WiFi Scan Done status=0 number=12 scan_id=128
+[15:11:50][D][wifi:477]: Found networks:
+[15:11:50][I][wifi:521]: - '***' (60:B7:6E:B5:FC:80) ▂▄▆█
+[15:11:50][D][wifi:522]:     Channel: 1
+[15:11:50][D][wifi:523]:     RSSI: -56 dB
+[15:11:50][I][wifi:521]: - '***' (1C:F2:9A:7E:55:90) ▂▄▆█
+[15:11:50][D][wifi:522]:     Channel: 1
+[15:11:50][D][wifi:523]:     RSSI: -67 dB
+[15:11:50][I][wifi:521]: - '***' (1C:F2:9A:7E:53:C2) ▂▄▆█
+[15:11:50][D][wifi:522]:     Channel: 6
+[15:11:50][D][wifi:523]:     RSSI: -73 dB
+[15:11:50][I][wifi:521]: - '***' (1C:F2:9A:7E:62:C1) ▂▄▆█
+[15:11:50][D][wifi:522]:     Channel: 11
+[15:11:50][D][wifi:523]:     RSSI: -93 dB
+[15:11:50][D][wifi:526]: - 'Guest' (62:B7:6E:B5:FC:80) ▂▄▆█
+[15:11:50][D][wifi:526]: - 'Guest' (1E:F2:9A:7E:55:90) ▂▄▆█
+[15:11:50][D][wifi:526]: - 'Guest' (1E:F2:9A:7E:53:C0) ▂▄▆█
+[15:11:50][D][wifi:526]: - '' (20:BE:CD:D3:64:64) ▂▄▆█
+[15:11:50][D][wifi:526]: - '' (20:BE:CD:D3:64:6A) ▂▄▆█
+[15:11:50][D][wifi:526]: - 'Pretty Fly Wi-Fi Guest' (20:BE:CD:D3:64:70) ▂▄▆█
+[15:11:50][D][wifi:526]: - 'Pretty Fly Wi-Fi' (20:BE:CD:D3:64:67) ▂▄▆█
+[15:11:50][D][wifi:526]: - 'Guest' (1E:F2:9A:7E:62:C0) ▂▄▆█
+[15:11:50][I][wifi:303]: WiFi Connecting to '***'...
+[15:11:50][V][wifi:305]: Connection Params:
+[15:11:50][V][wifi:306]:   SSID: '***'
+[15:11:50][V][wifi:309]:   BSSID: 60:B7:6E:B5:FC:80
+[15:11:50][V][wifi:329]:   Password: '***'
+[15:11:50][V][wifi:334]:   Channel: 1
+[15:11:50][V][wifi:343]:   Using DHCP IP
+[15:11:50][V][wifi:345]:   Hidden: NO
+[15:11:50][VV][esp-idf:000]: I (6329) wifi:
+[15:11:50][VV][esp-idf:000]: new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+[15:11:50][VV][esp-idf:000]:
+[15:11:50][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=4889 (now=5889)
+[15:11:51][W][component:237]: Component display took a long time for an operation (331 ms).
+[15:11:51][W][component:238]: Components should block for at most 30 ms.
+[15:11:51][VV][esp-idf:000]: I (7576) wifi:
+[15:11:51][VV][esp-idf:000]: state: init -> auth (b0)
+[15:11:51][VV][esp-idf:000]:
+[15:11:51]
+[15:11:51][VV][esp-idf:000]: I (7584) wifi:
+[15:11:51][VV][esp-idf:000]: state: auth -> assoc (0)
+[15:11:51][VV][esp-idf:000]:
+[15:11:51]
+[15:11:51][VV][esp-idf:000]: I (7605) wifi:
+[15:11:51][VV][esp-idf:000]: state: assoc -> run (10)
+[15:11:51][VV][esp-idf:000]:
+[15:11:51]
+[15:11:51][VV][esp-idf:000]: I (7635) wifi:
+[15:11:51][VV][esp-idf:000]: connected with ***, aid = 6, channel 1, BW20, bssid = 60:b7:6e:b5:fc:80
+[15:11:51][VV][esp-idf:000]:
+[15:11:51]
+[15:11:51][VV][esp-idf:000]: I (7637) wifi:
+[15:11:51][VV][esp-idf:000]: security: WPA2-PSK, phy: bgn, rssi: -58
+[15:11:51][VV][esp-idf:000]:
+[15:11:51]
+[15:11:51][VV][esp-idf:000]: I (7639) wifi:
+[15:11:51][VV][esp-idf:000]: pm start, type[VV][esp-idf:000]:
+[15:11:51]
+[15:11:51][VV][esp-idf:000]: I (7641) wifi:
+[15:11:51][VV][esp-idf:000]: set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 0, mt_pti: 25000, mt_time: 10000
+[15:11:51][VV][esp-idf:000]:
+[15:11:51]
+[15:11:51][V][wifi_esp32:643]: Event: Connected ssid='***' bssid=60:B7:6E:B5:FC:80 channel=1, authmode=WPA2 PSK
+[15:11:51][VV][esp-idf:000]: I (7651) wifi:
+[15:11:51][VV][esp-idf:000]: <ba-add>idx:0 (ifx:0, 60:b7:6e:b5:fc:80), tid:6, ssn:2, winSize:64
+[15:11:51][VV][esp-idf:000]:
+[15:11:51]
+[15:11:51][VV][esp-idf:000]: I (7698) wifi:[VV][esp-idf:000]: AP's beacon interval = 102400 us, DTIM period = 2
+[15:11:51][VV][esp-idf:000]:
+[15:11:51][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=5889 (now=6889)
+[15:11:52][W][component:237]: Component display took a long time for an operation (295 ms).
+[15:11:52][W][component:238]: Components should block for at most 30 ms.
+[15:11:52][VV][esp-idf:000]: I (8646) esp_netif_handlers: sta ip: 192.168.1.79, mask: 255.255.255.0, gw: 192.168.1.1
+[15:11:52]
+[15:11:52][VV][scheduler:063]: set_interval(name='', interval=10000, offset=172)
+[15:11:52][C][ota:096]: Over-The-Air Updates:
+[15:11:52][C][ota:097]:   Address: t-amoled.local:3232
+[15:11:52][C][ota:103]:   OTA version: 2.
+[15:11:52][W][ota:107]: Last Boot was an unhandled reset, will proceed to safe mode in 7 restarts
+[15:11:52][C][api:025]: Setting up Home Assistant API server...
+[15:11:52][I][app:062]: setup() finished successfully!
+[15:11:52][VV][scheduler:226]: Running interval '' with interval=10000 last_execution=4294964664 (now=7571)
+[15:11:52][W][component:170]: Component wifi cleared Warning flag
+[15:11:52][W][component:157]: Component api set Warning flag: unspecified
+[15:11:52][I][app:100]: ESPHome version 2024.4.0 compiled on May 19 2024, 15:11:19
+[15:11:52][C][wifi:580]: WiFi:
+[15:11:52][C][wifi:408]:   Local MAC: DC:DA:0C:5A:62:60
+[15:11:52][C][wifi:413]:   SSID: '***'
+[15:11:52][C][wifi:416]:   IP Address: 192.168.1.79
+[15:11:52][C][wifi:420]:   BSSID: 60:B7:6E:B5:FC:80
+[15:11:52][C][wifi:421]:   Hostname: 't-amoled'
+[15:11:52][C][wifi:423]:   Signal strength: -56 dB ▂▄▆█
+[15:11:52][V][wifi:425]:   Priority: 0.0
+[15:11:52][C][wifi:427]:   Channel: 1
+[15:11:52][C][wifi:428]:   Subnet: 255.255.255.0
+[15:11:52][C][wifi:429]:   Gateway: 192.168.1.1
+[15:11:52][C][wifi:430]:   DNS1: 192.168.1.1
+[15:11:52][C][wifi:431]:   DNS2: 0.0.0.0
+[15:11:52][C][logger:166]: Logger:
+[15:11:52][C][logger:167]:   Level: VERY_VERBOSE
+[15:11:52][C][logger:169]:   Log Baud Rate: 115200
+[15:11:52][C][logger:170]:   Hardware UART: USB_SERIAL_JTAG
+[15:11:52][C][spi:068]: SPI bus:
+[15:11:52][C][spi:069]:   CLK Pin: GPIO47
+[15:11:52][C][spi:070]:   SDI Pin:
+[15:11:52][C][spi:071]:   SDO Pin:
+[15:11:52][C][spi:073]:   Data pin 0: GPIO18
+[15:11:52][C][spi:073]:   Data pin 1: GPIO7
+[15:11:52][C][spi:073]:   Data pin 2: GPIO48
+[15:11:52][C][spi:073]:   Data pin 3: GPIO5
+[15:11:52][C][spi:076]:   Using HW SPI: SPI2_HOST
+[15:11:52][C][:155]: QSPI AMOLED
+[15:11:52][C][display.qspi_amoled:156]:   Height: 240
+[15:11:52][C][display.qspi_amoled:157]:   Width: 536
+[15:11:52][C][display.qspi_amoled:158]:   CS Pin: GPIO6
+[15:11:52][C][display.qspi_amoled:159]:   Reset Pin: GPIO17
+[15:11:52][C][display.qspi_amoled:160]:   SPI Data rate: 10MHz
+[15:11:52][C][psram:020]: PSRAM:
+[15:11:52][C][psram:021]:   Available: YES
+[15:11:52][C][psram:024]:   Size: 8191 KB
+[15:11:52][C][web_server:169]: Web Server:
+[15:11:52][C][web_server:170]:   Address: t-amoled.local:80
+[15:11:52][C][mdns:115]: mDNS:
+[15:11:52][C][mdns:116]:   Hostname: t-amoled
+[15:11:52][V][mdns:117]:   Services:
+[15:11:52][V][mdns:119]:   - _esphomelib, _tcp, 6053
+[15:11:52][V][mdns:121]:     TXT: version = 2024.4.0
+[15:11:52][V][mdns:121]:     TXT: mac = dcda0c5a6260
+[15:11:52][V][mdns:121]:     TXT: platform = ESP32
+[15:11:52][V][mdns:121]:     TXT: board = esp32-s3-devkitc-1
+[15:11:52][V][mdns:121]:     TXT: network = wifi
+[15:11:52][V][mdns:119]:   - _http, _tcp, 80
+[15:11:52][C][ota:096]: Over-The-Air Updates:
+[15:11:52][C][ota:097]:   Address: t-amoled.local:3232
+[15:11:52][C][ota:103]:   OTA version: 2.
+[15:11:52][W][ota:107]: Last Boot was an unhandled reset, will proceed to safe mode in 7 restarts
+[15:11:52][C][api:139]: API Server:
+[15:11:52][C][api:140]:   Address: t-amoled.local:6053
+[15:11:52][C][api:144]:   Using noise encryption: NO
+[15:11:52][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=6889 (now=7889)
+[15:11:53][W][component:237]: Component display took a long time for an operation (295 ms).
+[15:11:53][W][component:238]: Components should block for at most 30 ms.
+[15:11:53][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=7889 (now=8889)
+[15:11:54][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:11:54][W][component:238]: Components should block for at most 30 ms.
+[15:11:54][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=8889 (now=9889)
+[15:11:55][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:11:55][W][component:238]: Components should block for at most 30 ms.
+[15:11:55][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=9889 (now=10889)
+[15:11:56][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:11:56][W][component:238]: Components should block for at most 30 ms.
+[15:11:56][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=10889 (now=11889)
+[15:11:57][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:11:57][W][component:238]: Components should block for at most 30 ms.
+[15:11:57][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=11889 (now=12889)
+[15:11:58][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:11:58][W][component:238]: Components should block for at most 30 ms.
+[15:11:58][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=12889 (now=13889)
+[15:11:59][W][component:237]: Component display took a long time for an operation (295 ms).
+[15:11:59][W][component:238]: Components should block for at most 30 ms.
+[15:11:59][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=13889 (now=14889)
+[15:12:00][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:12:00][W][component:238]: Components should block for at most 30 ms.
+[15:12:00][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=14889 (now=15889)
+[15:12:01][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:12:01][W][component:238]: Components should block for at most 30 ms.
+[15:12:01][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=15889 (now=16889)
+[15:12:02][W][component:237]: Component display took a long time for an operation (294 ms).
+[15:12:02][W][component:238]: Components should block for at most 30 ms.
+[15:12:02][VV][scheduler:226]: Running interval '' with interval=10000 last_execution=7368 (now=17371)
+[15:12:02][VV][scheduler:226]: Running interval 'update' with interval=1000 last_execution=16889 (now=17889)

@@ -1,0 +1,68 @@
+esphome:
+  name: t-amoled
+  platformio_options:
+    build_unflags: -Werror=all
+    board_build.flash_mode: dio
+
+esp32:
+  board: esp32-s3-devkitc-1
+  variant: esp32s3
+  framework:
+    type: esp-idf
+
+logger:
+  level: VERY_VERBOSE
+
+api:
+
+ota:
+
+web_server:
+  port: 80
+
+wifi:
+  ssid: blank
+  password: blank
+  ap:
+    ssid: "CDM Display Amoled"
+
+external_components:
+  - source: github://clydebarrow/esphome@amoled
+    components: [ qspi_amoled ]
+    refresh: 10min
+
+spi:
+  id: quad_spi
+  type: quad
+  clk_pin: 47
+  data_pins: [18, 7, 48, 5]
+
+font:
+  - file: "RobotoMono_Regular.ttf" 
+    id: web_font
+    size: 12
+
+display:
+  - platform: qspi_amoled
+    id: my_display
+    model: RM67162
+    dimensions:
+      height: 240
+      width: 536
+      offset_height: 0
+      offset_width: 0
+    transform:
+      mirror_x: true
+      # mirror_y: false
+      swap_xy: true
+    color_order: rgb
+    # invert_colors: false
+    brightness: 175
+    cs_pin: 6
+    reset_pin: 17
+    enable_pin: 38
+    lambda: |-
+      it.print(it.get_width()/2, it.get_height()/2, id(web_font), TextAlign::CENTER, "ESPHome");
+
+psram:
+  mode: octal
